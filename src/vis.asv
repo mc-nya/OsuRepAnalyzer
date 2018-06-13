@@ -1,6 +1,5 @@
 step=100;
-time_multiplier=1.0;
-
+time_multiper=1.0;
 warning('off','last');
 load('colormap.mat');
 
@@ -31,9 +30,7 @@ lines=zeros(1,size(X,2));
 mark_plus=zeros(1,size(X,2));
 
 for outer_index=1:size(X,2)-2
-    if mod(outer_index,100)==0
-        title(['trace simulator ' num2str(outer_index/size(X,2)*100) '%']);   
-    end;
+    title(['trace simulator']);   
     h=patch('XData',[X(outer_index:outer_index+1) NaN],'YData',[Y(outer_index:outer_index+1) NaN],  ...,
     'CData',[speed(outer_index:outer_index+1) NaN], ...,
            'facecolor','none','edgecolor','interp','erasemode','xor'); 
@@ -66,7 +63,7 @@ for outer_index=1:size(X,2)-2
         k2down=0;
     end;
        
-    pause(min((dT(outer_index+1)/2300)/time_multiplier,0.2))
+    pause(min((dT(outer_index+1)/2300)/time_multiper,0.2))
 end
 
 clear dX dY i k1down k2down outer_index dist;
