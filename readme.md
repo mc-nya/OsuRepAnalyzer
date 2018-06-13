@@ -6,12 +6,16 @@
 
 ## 使用方法
 
+### python提取replay数据：
 将要分析的replay放入replays文件夹,运行：
 
     cd src
     python replay.py
 
+### matlab可视化：
 获得的matlab矩阵文件将保存在replays_mat中，将replay加载进matlab后，运行vis.m,可以看到可视化轨迹效果
+
+可通过调整pause的时间或设置断点进行观察，调整step改变轨迹长度
 
 ### ps:
 
