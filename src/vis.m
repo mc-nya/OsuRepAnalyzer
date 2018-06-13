@@ -8,7 +8,7 @@ dist=sqrt(dX.^2+dY.^2);
 speed=dist./dT(2:end);
 speed(speed<0)=0;
 speed(speed==Inf)=0;
-speed=speed/max(speed);
+
 
 
 figure(1);
@@ -21,6 +21,7 @@ for outer_index=1:step:size(X,2)-step
     hold on;
     colormap(mycmap);
     colorbar;
+    caxis([0,50]);
     patch('XData',[X(outer_index:outer_index+step) NaN],'YData',[Y(outer_index:outer_index+step) NaN],  ...,
     'CData',[speed(outer_index:outer_index+step) NaN], ...,
            'facecolor','none','edgecolor','interp'); 
